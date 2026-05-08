@@ -1,0 +1,17 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+TestResults/
+*.nupkg
+
+## Secrets / environment overrides
+appsettings.*.json
+!appsettings.json
+.env
+
+## OS
+.DS_Store
+Thumbs.db

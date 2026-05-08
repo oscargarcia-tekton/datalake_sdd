@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/DataLake.Application/DataLake.Application.csproj" />
+    <Project Path="src/DataLake.BatchProcessor/DataLake.BatchProcessor.csproj" />
+    <Project Path="src/DataLake.Classification/DataLake.Classification.csproj" />
+    <Project Path="src/DataLake.Domain/DataLake.Domain.csproj" />
+    <Project Path="src/DataLake.Infrastructure/DataLake.Infrastructure.csproj" />
+    <Project Path="src/DataLake.Ingest.Worker/DataLake.Ingest.Worker.csproj" />
+    <Project Path="src/DataLake.Parser/DataLake.Parser.csproj" />
+    <Project Path="src/DataLake.XmlExporter/DataLake.XmlExporter.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/DataLake.Application.Tests/DataLake.Application.Tests.csproj" />
+    <Project Path="tests/DataLake.Domain.Tests/DataLake.Domain.Tests.csproj" />
+    <Project Path="tests/DataLake.Integration.Tests/DataLake.Integration.Tests.csproj" />
+  </Folder>
+</Solution>

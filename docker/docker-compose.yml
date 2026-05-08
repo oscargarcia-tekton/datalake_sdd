@@ -1,0 +1,36 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      SA_PASSWORD: "Dev@Password123"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+
+  ingest-worker:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.ingest
+    environment:
+      ConnectionStrings__DefaultConnection: "Server=sqlserver;Database=DataLake;User Id=sa;Password=Dev@Password123;TrustServerCertificate=True;"
+      Ingest__WatchPath: "/data/incoming"
+      XmlExport__ImportTempPath: "/data/xml/temp"
+      XmlExport__ImportCompletePath: "/data/xml/complete"
+    volumes:
+      - data-incoming:/data/incoming
+      - data-xml:/data/xml
+    depends_on:
+      - sqlserver
+
+  batch-processor:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.batch
+    environment:
+      ConnectionStrings__DefaultConnection: "Server=sqlserver;Database=DataLake;User Id=sa;Password=Dev@Password123;TrustServerCertificate=True;"
+    depends_on:
+      - sqlserver
+
+volumes:
+  data-incoming:
+  data-xml:

@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-DataLake.Ingest.Worker-7d352bf4-3b69-44b1-9486-9b8b9317e6c9</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.1" />
+    <PackageReference Include="Serilog.Extensions.Hosting" Version="8.0.0" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="8.0.4" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataLake.Domain\DataLake.Domain.csproj" />
+    <ProjectReference Include="..\DataLake.Application\DataLake.Application.csproj" />
+    <ProjectReference Include="..\DataLake.Infrastructure\DataLake.Infrastructure.csproj" />
+    <ProjectReference Include="..\DataLake.Parser\DataLake.Parser.csproj" />
+    <ProjectReference Include="..\DataLake.Classification\DataLake.Classification.csproj" />
+    <ProjectReference Include="..\DataLake.XmlExporter\DataLake.XmlExporter.csproj" />
+  </ItemGroup>
+</Project>
